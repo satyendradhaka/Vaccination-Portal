@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of registered People</title>
+</head>
+<body>
+    {%for i in benificials%}
+        <p>name of benificial is {{i.user.first_name}}</p>
+        <p>email: {{i.user.email}} </p>
+        <p>contact number of beneficial is {{i.contact_1}}</p>
+    {% endfor%}
+    {%for i in relatives%}
+    <p>name of relative is {{i.name}}</p>
+    <p>email: {{i.user.email}} </p>
+    <p>contact number of relative is {{i.contact_1}}</p>
+{% endfor%}
+</body>
+</html>

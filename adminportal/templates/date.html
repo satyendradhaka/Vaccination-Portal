@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-black text-white h-screen w-full pb-4">
+        <div class="text-white flex justify-center font-semibold text-sm pt-4">Get the list</div>
+        <form action="" method="POST">
+            {% csrf_token %}
+          <div class="mx-6 mt-5 flex-col">
+            <label class="text-sm font-semibold" for="date">DATE:</label>
+            <input style="height:40px; background-color:#262626;" class="w-full focus:outline-none px-3" type="date" name="date"></input>
+          </div>
+          
+          <div class="flex justify-center">
+          <button class="bg-blue-600 mt-8 px-11 py-2 font-semibold text-sm focus:outline-none"type="submit">Get List</button>
+          </div>
+        </form>
+    </div> 
+</body>
+</html>

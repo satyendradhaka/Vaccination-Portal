@@ -1,0 +1,92 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>This is home page</h1>
+
+    <form action="{% url 'send_mail' %}" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="vaccine_1">covishield</label>
+            <input id="vaccine_1" name="name" type="radio" value="1">
+        </div>
+        <div>
+            <label for="vaccine_2">covaxin</label>
+            <input id="vaccine_2" name="name" type="radio" value="2">
+        </div>
+        <div>
+            <label for="doses">Number of doses</label>
+            <input id="doses" name="doses" type="number">
+        </div>
+        <div>
+            <label for="slot_1">9 to 12</label>
+            <input type="radio" name="slot" id="slot_1" value="0">
+            <label for="slot_2">12 to 3</label>
+            <input type="radio" name="slot" id="slot_2" value="1">
+            <label for="slot_3">3 to 5</label>
+            <input type="radio" name="slot" id="slot_3" value="2">
+        </div>
+        <div>
+            <label for="date">Date of availablity</label>
+            <input type="date" name="date" id="date">
+        </div>
+        <input type="submit", value="submit">
+        
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-black text-white h-screen w-full pb-4">
+        <div class="text-white flex justify-center font-semibold text-sm pt-4">ADD A SLOT</div>
+        <a href=""><button class="text-blue-600 mx-6 mt-5">&lt Go Back</button></a>
+        <form action="{% url 'send_mail' %}" method="POST">
+            {% csrf_token %}
+          <div class="mx-6 mt-5 flex-col">
+            <label class="text-sm font-semibold" for="date">DATE:</label>
+            <input style="height:40px; background-color:#262626;" class="w-full focus:outline-none px-3" type="date" name="date"></input>
+          </div>
+          <div class="mx-6 mt-5 flex-col">
+            <div class="text-sm font-semibold w-full" for="date">TIME:</div>
+            {% for i,t in slot.items %}
+            <div>
+                <input class="mt-2" type="radio" name="slot" value="{{i}}" />
+                <label for="{{i}}">{{t}}</label>
+            </div>  
+            {% endfor %}  
+          </div>
+         <div class="mx-6 mt-5 flex-col">
+            <div class="text-sm font-semibold w-full" for="date">TIME:</div>
+            <div class="flex space-x-14">
+            <div>
+            <input class="mt-2 mr-2 h-3 w-3" type="radio" name="name" value="1" />
+            <label for="1">Covishield</label>
+            </div><div>  
+            <input class="mt-2 mr-2 h-3 w-3" type="radio" name="name" value="2" />
+            <label for="2">Covaxin</label>  
+            </div>   
+          </div>
+          </div>
+          <div class="mx-6 mt-5 flex-col">
+            <label class="text-sm font-semibold" for="doses">NUMBER OF DOSES:</label>
+            <input style="height:40px; background-color:#262626;" class="w-full focus:outline-none px-3" type="number" name="doses" placeholder="Enter Number of Doses"></input>
+          </div>
+          <div class="flex justify-center">
+          <button class="bg-blue-600 mt-8 px-11 py-2 font-semibold text-sm focus:outline-none"type="submit">Confirm Slot</button></div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-black text-white min-h-screen w-full pb-4">
+        <div class="text-white flex justify-center font-semibold text-sm pt-4">Vaccine Registration</div>
+        <div class="flex justify-center mt-5 mx-6"><img
+                src="{% static 'images/iitg_logo.png' %}"
+                alt="Image" /></div>
+        <div class="mx-6 mt-4">How It Works?</div>
+        <div style="background-color:#161616" class="mx-6">
+            <ul style="color: #6F6F6F;" class="pt-3 pb-5">
+                <li class="px-4">Register yourself</li>
+                <li class="px-4">You will be notified via mail when your slot is scheduled.</li>
+            </ul>
+        </div>
+        <div class="flex-column justify-center">
+            <div class="flex justify-center">
+                <div class="mx-6 w-full">
+                    <a href="{% url 'social:begin' 'azuread-tenant-oauth2' %}">
+                        <button class="bg-blue-600 font-semibold text-sm mb-4 mt-9 flex justify-center w-full py-3">
+                            <div class="flex">
+                                <div>Login using outlook for Registration</div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5 13.18V15.99C5 16.72 5.4 17.4 6.04 17.75L11.04 20.48C11.64 20.81 12.36 20.81 12.96 20.48L17.96 17.75C18.6 17.4 19 16.72 19 15.99V13.18L12.96 16.48C12.36 16.81 11.64 16.81 11.04 16.48L5 13.18ZM11.04 3.52003L2.61 8.12003C1.92 8.50003 1.92 9.50003 2.61 9.88003L11.04 14.48C11.64 14.81 12.36 14.81 12.96 14.48L21 10.09V16C21 16.55 21.45 17 22 17C22.55 17 23 16.55 23 16V9.59003C23 9.22003 22.8 8.89003 22.48 8.71003L12.96 3.52003C12.36 3.20003 11.64 3.20003 11.04 3.52003Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column justify-center">
+            <div class="flex justify-center">
+                <div class="mx-6 w-full">
+                    <a href="{% url 'social:begin' 'google-oauth2' %}">
+                        <button class="bg-blue-600 font-semibold text-sm mb-4 mt-9 flex justify-center w-full py-3">
+                            <div class="flex">
+                                <div>Login using google(official G-Suit account) for Registration</div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5 13.18V15.99C5 16.72 5.4 17.4 6.04 17.75L11.04 20.48C11.64 20.81 12.36 20.81 12.96 20.48L17.96 17.75C18.6 17.4 19 16.72 19 15.99V13.18L12.96 16.48C12.36 16.81 11.64 16.81 11.04 16.48L5 13.18ZM11.04 3.52003L2.61 8.12003C1.92 8.50003 1.92 9.50003 2.61 9.88003L11.04 14.48C11.64 14.81 12.36 14.81 12.96 14.48L21 10.09V16C21 16.55 21.45 17 22 17C22.55 17 23 16.55 23 16V9.59003C23 9.22003 22.8 8.89003 22.48 8.71003L12.96 3.52003C12.36 3.20003 11.64 3.20003 11.04 3.52003Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine registration</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-black text-white min-h-screen w-full pb-4">
+        <div class="text-white flex justify-center font-semibold text-sm pt-4">STUDENT REGISTRATION</div>
+        <a href=""><button class="text-blue-600 mx-6 mt-5">&lt Go Back</button></a>
+        <form action="" method="POST">
+            {% csrf_token %}
+          <div class="mx-6 mt-5 flex-col">
+            <label class="text-sm font-semibold" for="name">Name</label>
+            <div style="height:40px; background-color:#262626; color: #6F6F6F" class="w-full focus:outline-none px-3 flex items-center" >{{request.user.first_name}}</div>
+          </div>
+           <div class="mx-6 mt-5 flex-col">
+            <label class="text-sm font-semibold" for="rollNumber">Roll Number(Only if you are a Student)</label>
+            <input style="height:40px; background-color:#262626;" class="w-full focus:outline-none px-3" type="number" name="rollNumber" placeholder="{{request.user.last_name}}" value="{{request.user.last_name}}"></input>
+          </div>
+           <div class="mx-6 mt-5 flex-col">
+            <label class="text-sm font-semibold" for="contact_1">Primary Contact Number</label>
+            <input style="height:40px; background-color:#262626;" class="w-full focus:outline-none px-3" type="number" name="contact_1" placeholder="Enter Your primary Number" required></input>
+          </div>
+          <div class="mx-6 mt-5 flex-col">
+            <label class="text-sm font-semibold" for="contact_2">Secondary Contact Number(If Any)</label>
+            <input style="height:40px; background-color:#262626;" class="w-full focus:outline-none px-3" type="number" name="contact_2" placeholder="Enter Your second Number" ></input>
+          </div>
+           <div class="mx-6 mt-5 flex-col">
+            <label class="text-sm font-semibold" for="email">Email</label>
+            <div style="height:40px; background-color:#262626; color: #6F6F6F" class="w-full focus:outline-none px-3 flex items-center" >{{request.user.email}}</div>
+          </div>
+          <div class="mx-6 mt-5 flex-col">
+           <label class="text-sm font-semibold" for="is_second">Dose No</label>
+           <input style="height:40px; background-color:#262626;" class="w-full focus:outline-none px-3" type="number" min="1" max="2" name="is_second"/>
+          </div>
+          <div class="flex justify-center">
+          <button class="bg-blue-600 mt-8 px-11 py-2 font-semibold text-sm focus:outline-none"type="submit">Register</button></div>
+        </form>
+        <a href="{% url 'relatives' %}">
+          <div class="flex justify-center">
+            <button class="bg-blue-600 mt-8 px-11 py-2 font-semibold text-sm focus:outline-none" >Book slot for relatives</button></div>
+        </a>
+      </div>
+</body>
+</html>

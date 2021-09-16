@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Vaccination</title>
+</head>
+<body>
+    {%for i in benificials%}
+        {%if i.is_vaccinated == False %}
+        <p>name of benificial is {{i.user.first_name}}</p>
+        <p>email: {{i.user.username}} </p>
+        <p>contact number of f is {{i.contact_1}}</p>
+        <form action="{%url 'is_vacc'%}" method="post">
+            {% csrf_token %}
+            <label for="confirm">Vaccinated</label>
+            <input type="checkbox" name="confirm" id="confirm" value="{{i.user.username}}">
+            <input type="submit" value="submit">
+        </form>
+        {% endif %}
+    {% endfor%}
+</body>
+</html>
